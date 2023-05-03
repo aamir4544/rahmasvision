@@ -165,15 +165,14 @@ nav {
 }
 .about-me-text h2,
 .about-me-text p {
-  line-height: 1.8;
-  font-family:'open sans', sans-serif;
+  flex: 1;
+  width: 70%;
 }
 
+
 .about-me-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'open sans', sans-serif;
@@ -206,12 +205,9 @@ nav {
   border-radius: 4px;
   transition: background-color 0.6s ease;
 }
-.image-container img {
-  border-radius: 10px;
-}
 .image-container {
-  position: relative;
-  display: inline-block; /* Add this line */
+  
+  margin-right: 20px;
 }
 
 .sports {
@@ -417,16 +413,40 @@ margin: 0.5rem 0;
 
 .carousel-inner img {
   border-radius: 20px;
-  object-fit: contain;
+  object-fit: contain; /* Change from 'cover' to 'contain' */
   object-position: center;
-  height: 50vh;
+  height: 50vh; /* Adjust the height value */
   overflow: hidden;
-  width: 40vh;
-  
+  width: auto; /* Change the width value from 100% to auto */
+  max-width: 100%; /* Add a max-width value to prevent the image from exceeding the container width */
 }
+
 
 .carousel-control-prev, .carousel-control-next {
   top: 50%;
-  transform: translateX(-200%);
+  transform: translateX(-50%);
   color: #000000;
 }
+.intro-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+
+.intro-container img {
+  width: 100%;
+  max-width: 100%; /* Set the maximum width to 100% for the main image */
+  margin-right: 20px; /* Add space between the main image and the text container */
+}
+
+
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* q: create the code to put the carousel under the about me text but to the right of the image */
+/* a: use grid to create a 2x2 grid and put the carousel in the bottom right corner */
+/* q: create the code for the 2x2 grid */
